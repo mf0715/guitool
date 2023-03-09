@@ -30,12 +30,6 @@ class PerfFrame(customtkinter.CTkFrame):
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
 
-        self.sheet = tksheet.Sheet(self, headers=["测试项", "源数据", "结果"], height=700,
-                                   show_x_scrollbar=False,
-                                   vertical_grid_to_end_of_window=True,
-                                   horizontal_grid_to_end_of_window=True)
-        self.sheet.disable_bindings()
-        self.sheet.grid(row=0, column=0, ipadx=20, ipady=20)
         self.fileframe = customtkinter.CTkFrame(self, height=60)
         self.fileframe.grid(row=1, column=0, padx=20, sticky="sew")
         self.fileframe.grid_columnconfigure(1, weight=1)
@@ -46,9 +40,18 @@ class PerfFrame(customtkinter.CTkFrame):
 
     def getres(self):
         path = filedialog.askopenfilename(filetypes=[("日志文件", [".xml"])])
+        #path = "CCTC-AK-2023-0002-0228173951.xml"
         self.filepath.insert(tkinter.END, path)
         res = getperf.get_perf(path)
+        self.sheet = tksheet.Sheet(self, headers=["测试项", "源数据", "结果"], height=750, width=448,
+                                   show_x_scrollbar=False,
+                                   vertical_grid_to_end_of_window=True,
+                                   horizontal_grid_to_end_of_window=True)
+        self.sheet.enable_bindings()
+
+        self.sheet.grid(row=0, column=0, ipadx=20, ipady=20)
         for i in range(3):
+            self.sheet.column_width(column=i, width=150)
             self.sheet.set_column_data(i, values=res[i], add_rows=True, redraw=False)
 
 

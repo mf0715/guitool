@@ -37,7 +37,6 @@ def get_perf(path):
             prename = ''
             name = 'non'
             for item in perf:
-                prename = name[:3]
                 res = '0'
                 for re in item:
                     if re.tag == 'performanceResult':
@@ -63,6 +62,7 @@ def get_perf(path):
                         perf_name.append(name)
                         perf_source.append(res)
                         perf_result.append(res)
+                        print(name)
 
                     else:
                         perf_name.append(name)

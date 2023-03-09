@@ -27,7 +27,7 @@ class App(customtkinter.CTk):
         super().__init__()
 
         # configure window
-        self.title("MuTool")
+        self.title("MuTools")
         self.geometry(f"{1100}x{580}")
 
         # configure grid layout (2x1)
@@ -61,13 +61,13 @@ class App(customtkinter.CTk):
 
     def init_showperf(self):
         self.perf_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color='#EEEEEE')
-        self.perf_frame.grid(row=0, column=1, rowspan=4, columnspan=3, sticky="nsew")
-        self.perf_name = customtkinter.CTkTextbox(self)
-        self.perf_name.grid(row=0, column=1, padx=(20, 0), pady=(20, 20), sticky="nsew")
-        self.perf_source = customtkinter.CTkTextbox(self)
-        self.perf_source.grid(row=0, column=2, padx=(20, 0), pady=(20, 20), sticky="nsew")
-        self.perf_result = customtkinter.CTkTextbox(self)
-        self.perf_result.grid(row=0, column=3, padx=(20, 0), pady=(20, 20), sticky="nsew")
+        self.perf_frame.grid(row=0, column=1, rowspan=3, columnspan=3, sticky="nsew")
+        self.perf_name = customtkinter.CTkTextbox(self.perf_frame)
+        self.perf_name.grid(row=0, column=0, padx=(20, 0), pady=(20, 20), sticky="nsew")
+        self.perf_source = customtkinter.CTkTextbox(self.perf_frame)
+        self.perf_source.grid(row=0, column=1, padx=(20, 0), pady=(20, 20), sticky="nsew")
+        self.perf_result = customtkinter.CTkTextbox(self.perf_frame)
+        self.perf_result.grid(row=0, column=2, padx=(20, 0), pady=(20, 20), sticky="nsew")
         self.file_path = customtkinter.CTkTextbox(self, width=250, height=20)
         self.file_path.grid(row=3, column=1, columnspan=2, padx=(20, 0), pady=(20, 20), sticky="nsew")
         self.main_button_1 = customtkinter.CTkButton(master=self, fg_color="transparent", border_width=2,
