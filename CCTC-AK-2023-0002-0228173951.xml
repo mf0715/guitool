@@ -1,0 +1,1354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<funDetectionRecordInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--检测任务基本信息，其中除检测结束日期时间，其他由检测任务管理系统下发（详见检测任务基本信息xml文件），工具在生成检测记录信息时回填到本文件中。用途：保持记录的完整性和唯一性-->
+  <basicInfo>
+    <!--任务编号-->
+    <taskID>CCTC-AK-2023-0002</taskID>
+    <!--检测人员标识-->
+    <InspectorID>0001</InspectorID>
+    <!--检测人员名称-->
+    <InspectorName>ZX</InspectorName>
+    <!--检测开始日期时间,格式要求： YYYY-MM-DDThh:mm:ss，检测开始，用例下发的日期时间，例如：2002-05-30T09:00:00，时间和日期之间用T隔开-->
+    <taskStartTime>2023:02:28 11:59:54</taskStartTime>
+    <!--检测结束日期时间，格式要求YYYY-MM-DDThh:mm:ss，检测结束，工具生成记录的日期时间-->
+    <taskEndTime>2023-02-28T17:39:51</taskEndTime>
+    <!--工具编号
+	0001：移动端密码支撑模块类密码检测工具；
+	0002：数字证书认证系统密码检测工具；
+	0003：信息系统密码安全性分析检测工具；
+	0004：安全芯片控制台；
+	0005：安全浏览器密码检测工具；
+	0006：密码卡密码检测工具；
+	0007：电子签章系统密码检测工具；
+	0008：密钥管理系统密码检测工具；
+	0009：服务器密码机密码检测工具；
+	0010：智能IC卡密码检测工具；
+	0011：智能密码钥匙密码检测工具；
+	0012：签名验签服务器密码检测工具省；
+	0013：IPSec VPN密码检测工具；
+	0014：SSL VPN密码检测工具；
+	0015：安全电子邮件密码检测工具。
+	-->
+    <toolID/>
+    <!--工具名称-->
+    <toolname/>
+    <!--检测产品名称-->
+    <productName>格尔服务器密码机</productName>
+    <!--检测产品型号，若没有该项可为空，或删除-->
+    <productID>Koal HSM S3</productID>
+    <!--检测产品类型：
+	移动端密码支撑模块
+	数字证书认证系统
+	信息系统
+	安全芯片
+	安全浏览器
+	密码卡
+	电子签章系统
+	密钥管理系统
+	服务器密码机
+	智能IC卡
+	智能密码钥匙
+	签名验签服务器
+	IPSec VPN
+	SSL VPN
+	安全电子邮件
+	-->
+    <productType/>
+    <!--送检单位名称-->
+    <manCompany>格尔软件</manCompany>
+    <!--检测环境信息-->
+    <environmentInfo>
+      <!--检测环境标识，例如“检测环境一”、“检测环境二”等，每次测试适配环境唯一-->
+      <testEnvironmentID>检测环境一</testEnvironmentID>
+      <!--检测环境的详细信息，本次检测适配的服务器、终端等环境信息，可能会出现多个-->
+      <testEnvironmentInfo>
+        <!--设备类型-->
+        <equipmentType>终端</equipmentType>
+        <!--以下为环境信息设备的具体配置，根据实际情况，可以有多个-->
+        <equipmentInfo>
+          <!--设备名称-->
+          <equipmentName>终端01</equipmentName>
+          <!--设备标识-->
+          <equipmentID>CCTC-P-0001</equipmentID>
+          <!--设备规格型号-->
+          <specification>自组</specification>
+          <environmentData>
+            <!--基础软硬件类型，包括：CPU、操作系统、数据库、中间件、浏览器、版式软件、流式软件等，下面只以处理器和操作系统举例-->
+            <envType>CPU</envType>
+            <envSpecification>龙芯 3B3000</envSpecification>
+            <memo/>
+          </environmentData>
+          <environmentData>
+            <envType>操作系统</envType>
+            <envSpecification>中标麒麟（服务器龙芯版） V7.0</envSpecification>
+            <memo/>
+          </environmentData>
+        </equipmentInfo>
+      </testEnvironmentInfo>
+    </environmentInfo>
+  </basicInfo>
+  <!--密码功能检测记录-->
+  <functionTest>
+    <!--算法正确性检测记录，以下示例检测项为全集，若示例中的检测项实际不检测，该检测项的节点在生成检测记录文件时可以不生成，或者根据实际情况填写“3”作为检测结果，表示不相关-->
+    <algorithmCorrectness>
+      <!--SM2算法正确性检测的记录-->
+      <SM2_AsymmetricCryptographic>
+        <!--SM2加密正确性-->
+        <SM2_encryptionInfo>
+          <!--用例ID，预留,检测业务管理系统目前不解析，下同-->
+          <usecaseID>020001</usecaseID>
+          <!--用例名称，预留，检测业务管理系统目前不解析，下同-->
+          <usecaseName>测试用例: SM2加密算法正确性</usecaseName>
+          <!--检测结果：
+				0:通过;
+				1:不通过;
+				2:未测试;
+				3:不相关。
+下同-->
+          <testResult>0</testResult>
+          <!--测试产生的过程数据，说明记录等，检测业务管理系统目前不解析，如果检测未通过，可以作为判定的依据，下同-->
+          <testData>Publickey:c4f7d581befef25c8bbb6dad52a6ab8234fa7db7a988592bc592daf2be630647e3746788cbdc59042d85260dd48b6a7347d82c5314e8ac261588a33151dfca17
+PrivateKey:e7cb09606a53320b347f61f3f142dcb118f723a9bc27879f2805be778f24aee5
+PlainText:ea4ec352f076a6be
+</testData>
+        </SM2_encryptionInfo>
+        <!--SM2解密正确性-->
+        <SM2_DecryptionInfo>
+          <usecaseID>020002</usecaseID>
+          <usecaseName>测试用例: SM2解密算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>Publickey:c4f7d581befef25c8bbb6dad52a6ab8234fa7db7a988592bc592daf2be630647e3746788cbdc59042d85260dd48b6a7347d82c5314e8ac261588a33151dfca17
+PrivateKey:e7cb09606a53320b347f61f3f142dcb118f723a9bc27879f2805be778f24aee5
+PlainText:ea4ec352f076a6be
+</testData>
+        </SM2_DecryptionInfo>
+        <!--SM2签名预处理-->
+        <SM2_signaturePreprocessing>
+          <usecaseID>020003</usecaseID>
+          <usecaseName>测试用例: SM2签名预处理正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>Publickey:5ca4e440c508c45fe7d758ab10c45d8237c4f9559f7d466185f295399f0aa37d59ad8a3cd17903287681bf9d21da2eb316a0ce8fd41c89ce1e2b3f1b8e041aba
+PrivateKey:c242939ddab6fcc07b6676c07d2dc117ec68a09142c25c008630b9756786162d
+ID:1234567812345678
+PlainText:3854c463fa3f73783621b1ce4ef83f7c78048aac79b221fcdd290866cc131174
+</testData>
+        </SM2_signaturePreprocessing>
+        <!--SM2签名无预处理-->
+        <SM2_signature>
+          <usecaseID>020004</usecaseID>
+          <usecaseName>测试用例: SM2签名无预处理正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>Publickey:5ca4e440c508c45fe7d758ab10c45d8237c4f9559f7d466185f295399f0aa37d59ad8a3cd17903287681bf9d21da2eb316a0ce8fd41c89ce1e2b3f1b8e041aba
+PrivateKey:c242939ddab6fcc07b6676c07d2dc117ec68a09142c25c008630b9756786162d
+PlainText:3854c463fa3f73783621b1ce4ef83f7c78048aac79b221fcdd290866cc131174
+</testData>
+        </SM2_signature>
+        <!--SM2验签预处理-->
+        <SM2_verifyPreprocessing>
+          <usecaseID>020005</usecaseID>
+          <usecaseName>测试用例: SM2验签预处理正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>Publickey:5ca4e440c508c45fe7d758ab10c45d8237c4f9559f7d466185f295399f0aa37d59ad8a3cd17903287681bf9d21da2eb316a0ce8fd41c89ce1e2b3f1b8e041aba
+PrivateKey:c242939ddab6fcc07b6676c07d2dc117ec68a09142c25c008630b9756786162d
+ID:1234567812345678
+PlainText:3854c463fa3f73783621b1ce4ef83f7c78048aac79b221fcdd290866cc131174
+</testData>
+        </SM2_verifyPreprocessing>
+        <!--SM2验签无预处理-->
+        <SM2_verify>
+          <usecaseID>020006</usecaseID>
+          <usecaseName>测试用例: SM2验签无预处理正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>Publickey:5ca4e440c508c45fe7d758ab10c45d8237c4f9559f7d466185f295399f0aa37d59ad8a3cd17903287681bf9d21da2eb316a0ce8fd41c89ce1e2b3f1b8e041aba
+PrivateKey:c242939ddab6fcc07b6676c07d2dc117ec68a09142c25c008630b9756786162d
+PlainText:3854c463fa3f73783621b1ce4ef83f7c78048aac79b221fcdd290866cc131174
+</testData>
+        </SM2_verify>
+        <!--SM2密钥对生成-->
+        <SM2_keyPairGeneration>
+          <usecaseID>020007</usecaseID>
+          <usecaseName>测试用例: SM2密钥对生成正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </SM2_keyPairGeneration>
+        <!--密钥协商发起方-->
+        <SM2_keyNegotiationInitiator>
+          <usecaseID>020008</usecaseID>
+          <usecaseName>测试用例: SM2密钥协商发起方正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>KeyIndex:1</testData>
+        </SM2_keyNegotiationInitiator>
+        <!--密钥协商响应方-->
+        <SM2_keyNegotiationResponder>
+          <usecaseID>020009</usecaseID>
+          <usecaseName>测试用例: SM2密钥协商响应方正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>KeyIndex:2</testData>
+        </SM2_keyNegotiationResponder>
+      </SM2_AsymmetricCryptographic>
+      <!--SM3算法正确信息检测的记录-->
+      <SM3_hashAlgorithm>
+        <!--无参数-->
+        <SM3_hash1>
+          <usecaseID>020010</usecaseID>
+          <usecaseName>测试用例: SM3不带公钥和ID算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>PlainText:61626364616263646162636461626364616263646162636461626364616263646162636461626364616263646162636461626364616263646162636461626364
+HashData:debe9ff92275b8a138604889c18e5a4d6fdb70e5387e5765293dcba39c0c5732
+</testData>
+        </SM3_hash1>
+        <!--有参数-->
+        <SM3_hash2>
+          <usecaseID>020011</usecaseID>
+          <usecaseName>测试用例: SM3带公钥和ID算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>PlainText:61626364616263646162636461626364616263646162636461626364616263646162636461626364616263646162636461626364616263646162636461626364
+Publickey:7265131a62c2e6902b3f5b09e04dfdd92c31aa2afb30ff8e958841a923e91d68049308d108250916df985b74c45ba75cc56848f587988e1f8c0c27882cb4cace
+ID:1234567812345678
+HashData:dcbb90c304da5c2c35f6b655e29494d42a8272858d1b4ebb9da6d51ff4237630
+</testData>
+        </SM3_hash2>
+      </SM3_hashAlgorithm>
+      <!--SM4算法正确性检测的记录-->
+      <SM4_SymmetricCryptographic>
+        <!--ECB加密-->
+        <SM4_ECBEncryption>
+          <usecaseID>020012</usecaseID>
+          <usecaseName>测试用例: SM4_ECB加密算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>SecretKey:0123456789abcdeffedcba9876543210
+PlainText:0123456789abcdeffedcba9876543210
+CipherText:681edf34d206965e86b3e94f536e4246
+</testData>
+        </SM4_ECBEncryption>
+        <!--CBC加密-->
+        <SM4_CBCEncryption>
+          <usecaseID>020013</usecaseID>
+          <usecaseName>测试用例: SM4_CBC加密算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>SecretKey:0123456789abcdeffedcba9876543210
+IV:ebeec56858e604d8327b9b3c10c90ca7
+PlainText:0123456789abcdeffedcba987654321029bee1d65249f1e9b3db873e240d0647
+CipherText:3f1e73c3dfd5a132882fe69d996cde935499095dde68995b4d70f2309f2ef1b7
+</testData>
+        </SM4_CBCEncryption>
+        <!--OFB加密-->
+        <SM4_OFBEncryption>
+          <usecaseID>020014</usecaseID>
+          <usecaseName>测试用例: SM4_OFB加密算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>SecretKey:40bb12dd6a8273867f3529d354b4a026
+IV:e83d1715acf34863aceb93e0e5ab8b90
+PlainText:ffeeddccbbaa9988776655443322110000112233445566778899aabbccddeeff
+CipherText:7a3fe82e89546e2846c69b00669fdd52e4c233f945aafdaa2ecadb7a56decbee
+</testData>
+        </SM4_OFBEncryption>
+        <!--CFB加密-->
+        <SM4_CFBEncryption>
+          <usecaseID>020015</usecaseID>
+          <usecaseName>测试用例: SM4_CFB加密算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>SecretKey:ebbf8a7ed5d372d18db2c520e7af4858
+IV:9331cebb956c2e71c8ac31625aded834
+PlainText:6b1765f5e6e4b0bb798328ecb1f95d3e
+CipherText:7b6cd9ab85d56832c8744c28dc1a8390
+</testData>
+        </SM4_CFBEncryption>
+        <!--CTR加密-->
+        <SM4_CTREncryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM4_CTREncryption>
+        <!--ECB解密-->
+        <SM4_ECBDecryption>
+          <usecaseID>020017</usecaseID>
+          <usecaseName>测试用例: SM4_ECB解密算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>SecretKey:0123456789abcdeffedcba9876543210
+PlainText:0123456789abcdeffedcba9876543210
+CipherText:681edf34d206965e86b3e94f536e4246
+</testData>
+        </SM4_ECBDecryption>
+        <!--CBC解密-->
+        <SM4_CBCDecryption>
+          <usecaseID>020018</usecaseID>
+          <usecaseName>测试用例: SM4_CBC解密算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>SecretKey:0123456789abcdeffedcba9876543210
+IV:ebeec56858e604d8327b9b3c10c90ca7
+PlainText:0123456789abcdeffedcba987654321029bee1d65249f1e9b3db873e240d0647
+CipherText:3f1e73c3dfd5a132882fe69d996cde935499095dde68995b4d70f2309f2ef1b7
+</testData>
+        </SM4_CBCDecryption>
+        <!--OFB解密-->
+        <SM4_OFBDecryption>
+          <usecaseID>020019</usecaseID>
+          <usecaseName>测试用例: SM4_OFB解密算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>SecretKey:40bb12dd6a8273867f3529d354b4a026
+IV:e83d1715acf34863aceb93e0e5ab8b90
+PlainText:ffeeddccbbaa9988776655443322110000112233445566778899aabbccddeeff
+CipherText:7a3fe82e89546e2846c69b00669fdd52e4c233f945aafdaa2ecadb7a56decbee
+</testData>
+        </SM4_OFBDecryption>
+        <!--CFB解密-->
+        <SM4_CFBDecryption>
+          <usecaseID>020020</usecaseID>
+          <usecaseName>测试用例: SM4_CFB解密算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>SecretKey:5f67bea564a87b10c7304119cf749f26
+IV:6ed65122263b7175986bd6917063e6fe
+PlainText:548ed413df7935439fdd7e1b4f8e9016
+CipherText:79db2e7c4fea0cd8920a80d27e02ac9e
+</testData>
+        </SM4_CFBDecryption>
+        <!--CTR解密-->
+        <SM4_CTRDecryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM4_CTRDecryption>
+        <!--MAC-->
+        <SM4_MAC>
+          <usecaseID>020022</usecaseID>
+          <usecaseName>测试用例: SM4_MAC解密算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>SecretKey:cd4614558fc0a78e06f1d96fc912c7aa
+IV:e8e1a7518585444cc5d4a8d5e9945bb0
+PlainText:b97f6c7a963092e887ea3e46ee3c235e47eac732d8f6b4241aa35ef6e5e85318
+MAC:bbc0ec131f10beb09e7125762a1da268
+</testData>
+        </SM4_MAC>
+      </SM4_SymmetricCryptographic>
+      <!--SM1算法正确性的检测记录-->
+      <SM1_SymmetricCryptographic>
+        <!--ECB加密-->
+        <SM1_ECBEncryption>
+          <usecaseID>020023</usecaseID>
+          <usecaseName>测试用例: SM1_ECB加密算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>SecretKey:40bb12dd6a8273867f3529d354b4a026
+PlainText:ffeeddccbbaa99887766554433221100
+CipherText:6d7f45b08bc4d966444c86c2b07d2993
+</testData>
+        </SM1_ECBEncryption>
+        <!--CBC加密-->
+        <SM1_CBCEncryption>
+          <usecaseID>020024</usecaseID>
+          <usecaseName>测试用例: SM1_CBC加密算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>SecretKey:40bb12dd6a8273867f3529d354b4a026
+IV:e83d1715acf34863aceb93e0e5ab8b90
+PlainText:ffeeddccbbaa9988776655443322110000112233445566778899aabbccddeeff
+CipherText:3a70b5d49a782c072de11343819ec659f8fc7af05e7c6dfb5f81090f0d8791b2
+</testData>
+        </SM1_CBCEncryption>
+        <!--OFB加密-->
+        <SM1_OFBEncryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM1_OFBEncryption>
+        <!--CFB加密-->
+        <SM1_CFBEncryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM1_CFBEncryption>
+        <!--CTR加密-->
+        <SM1_CTREncryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM1_CTREncryption>
+        <!--ECB解密-->
+        <SM1_ECBDecryption>
+          <usecaseID>020028</usecaseID>
+          <usecaseName>测试用例: SM1_ECB解密算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>SecretKey:40bb12dd6a8273867f3529d354b4a026
+PlainText:ffeeddccbbaa99887766554433221100
+CipherText:6d7f45b08bc4d966444c86c2b07d2993
+</testData>
+        </SM1_ECBDecryption>
+        <!--CBC解密-->
+        <SM1_CBCDecryption>
+          <usecaseID>020029</usecaseID>
+          <usecaseName>测试用例: SM1_CBC解密算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>SecretKey:40bb12dd6a8273867f3529d354b4a026
+IV:e83d1715acf34863aceb93e0e5ab8b90
+PlainText:ffeeddccbbaa9988776655443322110000112233445566778899aabbccddeeff
+CipherText:3a70b5d49a782c072de11343819ec659f8fc7af05e7c6dfb5f81090f0d8791b2
+</testData>
+        </SM1_CBCDecryption>
+        <!--CFB解密-->
+        <SM1_OFBDecryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM1_OFBDecryption>
+        <!--CFB解密-->
+        <SM1_CFBDecryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM1_CFBDecryption>
+        <!--CTR解密-->
+        <SM1_CTRDecryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM1_CTRDecryption>
+        <!--MAC-->
+        <SM1_MAC>
+          <usecaseID>020033</usecaseID>
+          <usecaseName>测试用例: SM1_MAC解密算法正确性</usecaseName>
+          <testResult>0</testResult>
+          <testData>SecretKey:cd4614558fc0a78e06f1d96fc912c7aa
+IV:e8e1a7518585444cc5d4a8d5e9945bb0
+PlainText:b97f6c7a963092e887ea3e46ee3c235e47eac732d8f6b4241aa35ef6e5e85318
+MAC:a33344f9f93ba6e569044a707fb80e44
+</testData>
+        </SM1_MAC>
+      </SM1_SymmetricCryptographic>
+      <!--RSA2048算法正确性检测的记录-->
+      <RSA2048_AlgorithmCorrectness>
+        <!--RSA2048加密-->
+        <RSA2048_encryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </RSA2048_encryption>
+        <!--RSA2048解密-->
+        <RSA2048_decryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </RSA2048_decryption>
+        <!--RSA2048签名-->
+        <RSA2048_signature>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </RSA2048_signature>
+        <!--RSA2048验签-->
+        <RSA2048_verify>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </RSA2048_verify>
+      </RSA2048_AlgorithmCorrectness>
+      <!--SM7算法正确性检测的记录-->
+      <SM7_SymmetricCryptographic>
+        <!--ECB加密-->
+        <SM7_ECBEncryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM7_ECBEncryption>
+        <!--CBC加密-->
+        <SM7_CBCEncryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM7_CBCEncryption>
+        <!--OFB加密-->
+        <SM7_OFBEncryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM7_OFBEncryption>
+        <!--CFB加密-->
+        <SM7_CFBEncryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM7_CFBEncryption>
+        <!--ECB解密-->
+        <SM7_ECBDecryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM7_ECBDecryption>
+        <!--CBC解密-->
+        <SM7_CBCDecryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM7_CBCDecryption>
+        <!--OFB解密-->
+        <SM7_OFBDecryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM7_OFBDecryption>
+        <!--CFB解密-->
+        <SM7_CFBDecryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM7_CFBDecryption>
+      </SM7_SymmetricCryptographic>
+    </algorithmCorrectness>
+    <!--密码接口检测的数据-->
+    <interfaceDetection>
+      <!--设备管理类函数-->
+      <deviceManagement>
+        <!--测试打开设备、关闭设备-->
+        <openCloseDevice>
+          <usecaseID>100001</usecaseID>
+          <usecaseName>测试用例: 打开关闭密码设备</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </openCloseDevice>
+        <!--测试创建会话、关闭会话-->
+        <createCloseConversation>
+          <usecaseID>100002</usecaseID>
+          <usecaseName>测试用例: 打开关闭会话</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </createCloseConversation>
+        <!--测试获取设备信息-->
+        <getDeviceInfo>
+          <usecaseID>100003</usecaseID>
+          <usecaseName>测试用例: 获取设备信息</usecaseName>
+          <testResult>0</testResult>
+          <testData>IssuerName:koal
+DeviceName:Koal HSM S3
+DeviceSerial:2020052000130000
+DeviceVersion:31802320
+StandardVersion:1
+AsymAlgAbility:e3388420
+SymAlgAbility:0000050f
+HashAlgAbility:00000007
+BufferSize:1024</testData>
+        </getDeviceInfo>
+        <!--测试产生随机数-->
+        <generateRandonNumber>
+          <usecaseID>100004</usecaseID>
+          <usecaseName>测试用例: 随机数产生</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </generateRandonNumber>
+        <!--测试私钥使用权限-正确私钥-->
+        <theRightPrivateKey>
+          <usecaseID>100005</usecaseID>
+          <usecaseName>测试用例: 私钥使用权限-正确私钥</usecaseName>
+          <testResult>0</testResult>
+          <testData>KeyIndex:3	password:12345678</testData>
+        </theRightPrivateKey>
+        <!--测试私钥使用权限-错误私钥-->
+        <theWrongPrivateKey>
+          <usecaseID>100006</usecaseID>
+          <usecaseName>测试用例: 私钥使用权限-错误私钥</usecaseName>
+          <testResult>0</testResult>
+          <testData>KeyIndex:3	password:1</testData>
+        </theWrongPrivateKey>
+      </deviceManagement>
+      <!--密钥管理类函数-->
+      <keyManagement>
+        <!--测试导出公钥接口-->
+        <importPublicKey>
+          <usecaseID>100007</usecaseID>
+          <usecaseName>测试用例: 导出SM2签名/加密公钥</usecaseName>
+          <testResult>0</testResult>
+          <testData>KeyIndex:1</testData>
+        </importPublicKey>
+        <!--测试导出RSA公钥接口-->
+        <importRSAPublicKey>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </importRSAPublicKey>
+        <!--测试产生SM2密钥对-->
+        <generateSM2KeyPair>
+          <usecaseID>100008</usecaseID>
+          <usecaseName>测试用例: 产生SM2密钥对</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </generateSM2KeyPair>
+        <!--测试产生RSA密钥对-->
+        <generateRSAKeyPair>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </generateRSAKeyPair>
+        <!--会话密钥用例1 (内部公钥加密导出，
+导入会话密钥，会话密钥SM4加解密测试）
+-->
+        <conversationKey1>
+          <usecaseID>100009</usecaseID>
+          <usecaseName>测试用例: 会话密钥用例1</usecaseName>
+          <testResult>0</testResult>
+          <testData>KeyIndex:1</testData>
+        </conversationKey1>
+        <!--会话密钥用例2 (外部公钥加密导出，
+导入会话密钥，会话密钥SM4加解密测试）
+-->
+        <conversationKey2>
+          <usecaseID>100010</usecaseID>
+          <usecaseName>测试用例: 会话密钥用例2</usecaseName>
+          <testResult>0</testResult>
+          <testData>KeyIndex:1</testData>
+        </conversationKey2>
+        <!--会话密钥用例3(KEK加密会话密钥，会话密钥SM4加解密测试）-->
+        <conversationKey3>
+          <usecaseID>100011</usecaseID>
+          <usecaseName>测试用例: 会话密钥用例3</usecaseName>
+          <testResult>0</testResult>
+          <testData>KeyIndex:1</testData>
+        </conversationKey3>
+        <!--会话密钥用例4(明文会话密钥，会话密钥SM4加解密测试）-->
+        <conversationKey4>
+          <usecaseID>100012</usecaseID>
+          <usecaseName>测试用例: 会话密钥用例4</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </conversationKey4>
+        <!--会话密钥用例5 (内部RSA公钥加密导出，
+导入会话密钥，会话密钥SM4加解密测试）
+-->
+        <conversationKey5>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </conversationKey5>
+        <!--会话密钥用例6 (外部RSA公钥加密导出，
+导入会话密钥，会话密钥SM4加解密测试）
+-->
+        <conversationKey6>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </conversationKey6>
+        <!--SM2密钥协商-->
+        <SM2KeyNegotiation>
+          <usecaseID>100013</usecaseID>
+          <usecaseName>测试用例: SM2密钥协商</usecaseName>
+          <testResult>0</testResult>
+          <testData>KeyIndex1:1 KeyIndex2:2</testData>
+        </SM2KeyNegotiation>
+        <!--数字信封转换-->
+        <digitalEnvelopeTrans>
+          <usecaseID>100014</usecaseID>
+          <usecaseName>测试用例: SM2数字信封转换</usecaseName>
+          <testResult>0</testResult>
+          <testData>KeyIndex1:1 KeyIndex2:2</testData>
+        </digitalEnvelopeTrans>
+        <!--RSA数字信封转换-->
+        <RSAdigitalEnvelopeTrans>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </RSAdigitalEnvelopeTrans>
+      </keyManagement>
+      <!--对称算法运算类函数-->
+      <symmetricAlgorithm>
+        <!--SM1_ECB对称运算-->
+        <SM1_ECB>
+          <usecaseID>100018</usecaseID>
+          <usecaseName>测试用例: SM1_ECB对称运算</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </SM1_ECB>
+        <!--SM1_CBC对称运算-->
+        <SM1_CBC>
+          <usecaseID>100019</usecaseID>
+          <usecaseName>测试用例: SM1_CBC对称运算</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </SM1_CBC>
+        <!--SM1_OFB对称运算-->
+        <SM1_OFB>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM1_OFB>
+        <!--SM1_CFB对称运算-->
+        <SM1_CFB>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM1_CFB>
+        <!--SM1_CTR对称运算-->
+        <SM1_CTR>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM1_CTR>
+        <!--SM4_ECB对称运算-->
+        <SM4_ECB>
+          <usecaseID>100022</usecaseID>
+          <usecaseName>测试用例: SM4_ECB对称运算</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </SM4_ECB>
+        <!--SM4_CBC对称运算-->
+        <SM4_CBC>
+          <usecaseID>100023</usecaseID>
+          <usecaseName>测试用例: SM4_CBC对称运算</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </SM4_CBC>
+        <!--SM4_OFB对称运算-->
+        <SM4_OFB>
+          <usecaseID>100024</usecaseID>
+          <usecaseName>测试用例: SM4_OFB对称运算</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </SM4_OFB>
+        <!--SM4_CFB对称运算-->
+        <SM4_CFB>
+          <usecaseID>100025</usecaseID>
+          <usecaseName>测试用例: SM4_CFB对称运算</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </SM4_CFB>
+        <!--SM4_CTR对称运算-->
+        <SM4_CTR>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM4_CTR>
+        <!--SM1_MAC-->
+        <SM1_MAC_1>
+          <usecaseID>100026</usecaseID>
+          <usecaseName>测试用例: SM1_MAC对称运算</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </SM1_MAC_1>
+        <!--SM4_MAC-->
+        <SM4_MAC_1>
+          <usecaseID>100027</usecaseID>
+          <usecaseName>测试用例: SM4_MAC对称运算</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </SM4_MAC_1>
+        <!--SM7_ECB-->
+        <SM7_ECB>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM7_ECB>
+        <!--SM7_CBC-->
+        <SM7_CBC>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM7_CBC>
+        <!--SM7_OFB-->
+        <SM7_OFB>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM7_OFB>
+        <!--SM7_CFB-->
+        <SM7_CFB>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </SM7_CFB>
+      </symmetricAlgorithm>
+      <!--非对称算法运算类函数-->
+      <asymmetricAlgorithm>
+        <!--外部密钥SM2签名验签-->
+        <SM2_externalKeySV>
+          <usecaseID>100015</usecaseID>
+          <usecaseName>测试用例: 外部密钥SM2签名验签</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </SM2_externalKeySV>
+        <!--内部密钥SM2签名验签-->
+        <SM2_internalKeySV>
+          <usecaseID>100016</usecaseID>
+          <usecaseName>测试用例: 内部密钥SM2签名验签</usecaseName>
+          <testResult>0</testResult>
+          <testData>KeyIndex:1</testData>
+        </SM2_internalKeySV>
+        <!--外部密钥SM2加解密-->
+        <SM2_externalKeyCryption>
+          <usecaseID>100017</usecaseID>
+          <usecaseName>测试用例: 外部密钥SM2加密解密</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </SM2_externalKeyCryption>
+        <!--外部密钥RSA加解密-->
+        <RSA_externalKeyCryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </RSA_externalKeyCryption>
+        <!--内部密钥RSA签名验签-->
+        <RSA_internalKeySV>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </RSA_internalKeySV>
+        <!--外部密钥SM2加解密-->
+        <RSA_internalKeyCryption>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <testData/>
+        </RSA_internalKeyCryption>
+      </asymmetricAlgorithm>
+      <!--杂凑运算类函数-->
+      <hashAlgorithm>
+        <!--SM3运算(不带公钥和ID)-->
+        <SM3withPKID>
+          <usecaseID>100029</usecaseID>
+          <usecaseName>测试用例: SM3运算(带公钥和ID)</usecaseName>
+          <testResult>0</testResult>
+          <testData>Publickey:1146a3f47d6ecef90bdaf07b57ec8f5d54bee688341e0abd66405c677557d01e3b2f3385e2dc6fdb5aa6059461aa580d2d2aa7234018f1a01ae438e28ee81cf5
+ID:1234567812345678
+</testData>
+        </SM3withPKID>
+        <!--SM3运算(带公钥和ID)-->
+        <SM3withoutPKID>
+          <usecaseID>100028</usecaseID>
+          <usecaseName>测试用例: SM3运算(不带公钥和ID)</usecaseName>
+          <testResult>0</testResult>
+          <testData/>
+        </SM3withoutPKID>
+      </hashAlgorithm>
+      <fileOperations>
+        <!--文件管理-->
+        <fileManagement>
+          <usecaseID>100030</usecaseID>
+          <usecaseName>测试用例: 文件管理</usecaseName>
+          <testResult>0</testResult>
+          <testData>FileName:testfilemagement</testData>
+        </fileManagement>
+      </fileOperations>
+    </interfaceDetection>
+    <!--密码算法性能检测的记录，以下示例检测项为全集，若示例中的检测项实际不检测，该检测项的节点在生成检测记录文件时可以不生成，或者根据实际情况填写“3”作为检测结果，表示不相关-->
+    <cipherPerformance>
+      <!--SM2算法性能-->
+      <SM2Performance>
+        <!--SM2加密-->
+        <SM2_encryptionPerformance>
+          <usecaseID>030001</usecaseID>
+          <usecaseName>测试用例: SM2加密性能</usecaseName>
+          <!--检测结果标识：
+				0:通过，性能检测成功;
+				1:不通过，性能检测失败;
+				2:未测试，本次检测未进行该项性能检测;
+				3:不相关，该项性能与本送检产品无关。
+				下同-->
+          <testResult>0</testResult>
+          <!--SM2算法加密性能检测的数据，单位：Kbps-->
+          <performanceResult>9312.17</performanceResult>
+          <testData/>
+        </SM2_encryptionPerformance>
+        <!--SM2解密-->
+        <SM2_decryptionPerformance>
+          <usecaseID>030002</usecaseID>
+          <usecaseName>测试用例: SM2解密性能</usecaseName>
+          <testResult>0</testResult>
+          <!--SM2算法解密性能检测的数据，单位：Kbps-->
+          <performanceResult>39247.29</performanceResult>
+          <testData/>
+        </SM2_decryptionPerformance>
+        <!--SM2签名-->
+        <SM2_signaturePerformance>
+          <usecaseID>030003</usecaseID>
+          <usecaseName>测试用例: SM2签名性能</usecaseName>
+          <!--SM2算法签名性能检测的数据，单位：次/秒-->
+          <testResult>0</testResult>
+          <performanceResult>16654.09</performanceResult>
+          <testData/>
+        </SM2_signaturePerformance>
+        <!--SM2验签-->
+        <SM2_verifyPerformance>
+          <usecaseID>030004</usecaseID>
+          <usecaseName>测试用例: SM2验签性能</usecaseName>
+          <testResult>0</testResult>
+          <!--SM2算法验签性能检测的数据，单位：次/秒-->
+          <performanceResult>15876.22</performanceResult>
+          <testData/>
+        </SM2_verifyPerformance>
+        <!--SM2密钥对生成-->
+        <SM2_keyPairGeneratePerformance>
+          <usecaseID>030005</usecaseID>
+          <usecaseName>测试用例: SM2密钥对生成</usecaseName>
+          <testResult>0</testResult>
+          <!--SM2算法秘钥对生成性能检测的数据，单位：对/秒-->
+          <performanceResult>23821.78</performanceResult>
+          <testData/>
+        </SM2_keyPairGeneratePerformance>
+      </SM2Performance>
+      <!--SM3算法性能-->
+      <SM3Performance>
+        <usecaseID>030006</usecaseID>
+        <usecaseName>测试用例: SM3性能</usecaseName>
+        <testResult>0</testResult>
+        <!--SM3性能检测数据,杂凑性能，单位：Kbps-->
+        <performanceResult>999753.19</performanceResult>
+        <testData/>
+      </SM3Performance>
+      <!--SM4算法性能-->
+      <SM4Performance>
+        <!--ECB加密-->
+        <SM4_ECBEncryptionPerformance>
+          <usecaseID>030007</usecaseID>
+          <usecaseName>测试用例: SM4_ECB加密性能</usecaseName>
+          <testResult>0</testResult>
+          <!--SM4算法ECB加密性能检测的数据，单位：Kbps-->
+          <performanceResult>720452.17</performanceResult>
+          <testData/>
+        </SM4_ECBEncryptionPerformance>
+        <!--ECB解密-->
+        <SM4_ECBDecryptionPerformance>
+          <usecaseID>030008</usecaseID>
+          <usecaseName>测试用例: SM4_ECB解密性能</usecaseName>
+          <testResult>0</testResult>
+          <!--SM4算法ECB解密性能检测的数据，单位：Kbps-->
+          <performanceResult>680472.46</performanceResult>
+          <testData/>
+        </SM4_ECBDecryptionPerformance>
+        <!--CBC加密-->
+        <SM4_CBCEncryptionPerformance>
+          <usecaseID>030009</usecaseID>
+          <usecaseName>测试用例: SM4_CBC加密性能</usecaseName>
+          <testResult>0</testResult>
+          <!--SM4算法CBC加密性能检测的数据，单位：Kbps-->
+          <performanceResult>680617.19</performanceResult>
+          <testData/>
+        </SM4_CBCEncryptionPerformance>
+        <!--CBC解密-->
+        <SM4_CBCDecryptionPerformance>
+          <usecaseID>030010</usecaseID>
+          <usecaseName>测试用例: SM4_CBC解密性能</usecaseName>
+          <testResult>0</testResult>
+          <!--SM4算法CBC解密性能检测的数据，单位：Kbps-->
+          <performanceResult>683211.05</performanceResult>
+          <testData/>
+        </SM4_CBCDecryptionPerformance>
+        <!--OFB加密-->
+        <SM4_OFBEncryptionPerformance>
+          <usecaseID>030011</usecaseID>
+          <usecaseName>测试用例: SM4_OFB加密性能</usecaseName>
+          <testResult>0</testResult>
+          <!--SM4算法OFB加密性能检测的数据，单位：Kbps-->
+          <performanceResult>701693.60</performanceResult>
+          <testData/>
+        </SM4_OFBEncryptionPerformance>
+        <!--OFB解密-->
+        <SM4_OFBDecryptionPerformance>
+          <usecaseID>030012</usecaseID>
+          <usecaseName>测试用例: SM4_OFB解密性能</usecaseName>
+          <testResult>0</testResult>
+          <!--SM4算法OFB解密性能检测的数据，单位：Kbps-->
+          <performanceResult>687916.85</performanceResult>
+          <testData/>
+        </SM4_OFBDecryptionPerformance>
+        <!--CFB加密-->
+        <SM4_CFBEncryptionPerformance>
+          <usecaseID>030013</usecaseID>
+          <usecaseName>测试用例: SM4_CFB加密性能</usecaseName>
+          <testResult>0</testResult>
+          <!--SM4算法CFB加密性能检测的数据，单位：Kbps-->
+          <performanceResult>711362.46</performanceResult>
+          <testData/>
+        </SM4_CFBEncryptionPerformance>
+        <!--CFB解密-->
+        <SM4_CFBDecryptionPerformance>
+          <usecaseID>030014</usecaseID>
+          <usecaseName>测试用例: SM4_CFB解密性能</usecaseName>
+          <testResult>0</testResult>
+          <!--SM4算法CFB解密性能检测的数据，单位：Kbps-->
+          <performanceResult>685381.88</performanceResult>
+          <testData/>
+        </SM4_CFBDecryptionPerformance>
+        <!--CTR加密-->
+        <SM4_CTREncryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--SM4算法CTR加密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </SM4_CTREncryptionPerformance>
+        <!--CTR解密-->
+        <SM4_CTRDecryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--SM4算法CTR解密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </SM4_CTRDecryptionPerformance>
+        <!--MAC-->
+        <SM4_MACPerformance>
+          <usecaseID>030017</usecaseID>
+          <usecaseName>测试用例: SM4_MAC性能</usecaseName>
+          <testResult>0</testResult>
+          <!--SM4算法MAC运算性能检测的数据，单位：Kbps-->
+          <performanceResult>352502.88</performanceResult>
+          <testData/>
+        </SM4_MACPerformance>
+      </SM4Performance>
+      <!--SM1算法性能-->
+      <SM1Performance>
+        <!--ECB加密-->
+        <SM1_ECBEncryptionPerformance>
+          <usecaseID>030018</usecaseID>
+          <usecaseName>测试用例: SM1_ECB加密性能</usecaseName>
+          <testResult>0</testResult>
+          <!--SM1算法ECB加密性能检测的数据，单位：Kbps-->
+          <performanceResult>701818.26</performanceResult>
+          <testData/>
+        </SM1_ECBEncryptionPerformance>
+        <!--ECB解密-->
+        <SM1_ECBDecryptionPerformance>
+          <usecaseID>030019</usecaseID>
+          <usecaseName>测试用例: SM1_ECB解密性能</usecaseName>
+          <testResult>0</testResult>
+          <!--SM1算法ECB解密性能检测的数据，单位：Kbps-->
+          <performanceResult>679735.29</performanceResult>
+          <testData/>
+        </SM1_ECBDecryptionPerformance>
+        <!--CBC加密-->
+        <SM1_CBCEncryptionPerformance>
+          <usecaseID>030020</usecaseID>
+          <usecaseName>测试用例: SM1_CBC加密性能</usecaseName>
+          <testResult>0</testResult>
+          <!--SM1算法CBC加密性能检测的数据，单位：Kbps-->
+          <performanceResult>661655.32</performanceResult>
+          <testData/>
+        </SM1_CBCEncryptionPerformance>
+        <!--CBC解密-->
+        <SM1_CBCDecryptionPerformance>
+          <usecaseID>030021</usecaseID>
+          <usecaseName>测试用例: SM1_CBC解密性能</usecaseName>
+          <testResult>0</testResult>
+          <!--SM1算法CBC解密性能检测的数据，单位：Kbps-->
+          <performanceResult>666045.02</performanceResult>
+          <testData/>
+        </SM1_CBCDecryptionPerformance>
+        <!--OFB加密-->
+        <SM1_OFBEncryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--SM1算法OFB加密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </SM1_OFBEncryptionPerformance>
+        <!--OFB解密-->
+        <SM1_OFBDecryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--SM1算法OFB解密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </SM1_OFBDecryptionPerformance>
+        <!--CFB加密-->
+        <SM1_CFBEncryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--SM1算法CFB加密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </SM1_CFBEncryptionPerformance>
+        <!--CFB解密-->
+        <SM1_CFBDecryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--SM1算法CFB解密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </SM1_CFBDecryptionPerformance>
+        <!--CTR加密-->
+        <SM1_CTREncryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--SM1算法CTR加密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </SM1_CTREncryptionPerformance>
+        <!--CTR解密-->
+        <SM1_CTRDecryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--SM1算法CTR解密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </SM1_CTRDecryptionPerformance>
+        <!--MAC-->
+        <SM1_MACPerformance>
+          <usecaseID>030028</usecaseID>
+          <usecaseName>测试用例: SM1_MAC性能</usecaseName>
+          <testResult>0</testResult>
+          <!--SM1算法MAC运算性能检测的数据，单位：Kbps-->
+          <performanceResult>362352.48</performanceResult>
+          <testData/>
+        </SM1_MACPerformance>
+      </SM1Performance>
+      <!--RSA2048性能检测的记录-->
+      <RSA2048Performance>
+        <!--RSA2048加密-->
+        <RSA2048_encryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--RSA2048算法加密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </RSA2048_encryptionPerformance>
+        <!--RSA2048解密-->
+        <RSA2048_decryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--RSA2048算法解密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </RSA2048_decryptionPerformance>
+        <!--RSA2048签名-->
+        <RSA2048_signaturePerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--RSA2048算法签名性能检测的数据，单位：次/秒-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </RSA2048_signaturePerformance>
+        <!--RSA2048验签-->
+        <RSA2048_verifyPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--RSA2048算法验签性能检测的数据，单位：次/秒-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </RSA2048_verifyPerformance>
+        <!--RSA2048密钥对生成-->
+        <RSA2048_keyPairGeneratePerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--RSA2048算法秘钥对生成性能检测的数据，单位：对/秒-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </RSA2048_keyPairGeneratePerformance>
+      </RSA2048Performance>
+      <!--SM7算法性能-->
+      <SM7Performance>
+        <!--ECB加密-->
+        <SM7_ECBEncryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--SM7算法ECB加密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </SM7_ECBEncryptionPerformance>
+        <!--ECB解密-->
+        <SM7_ECBDecryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--SM7算法ECB解密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </SM7_ECBDecryptionPerformance>
+        <!--CBC加密-->
+        <SM7_CBCEncryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--SM7算法CBC加密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </SM7_CBCEncryptionPerformance>
+        <!--CBC解密-->
+        <SM7_CBCDecryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--SM7算法CBC解密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </SM7_CBCDecryptionPerformance>
+        <!--OFB加密-->
+        <SM7_OFBEncryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--SM7算法OFB加密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </SM7_OFBEncryptionPerformance>
+        <!--OFB解密-->
+        <SM7_OFBDecryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--SM7算法OFB解密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </SM7_OFBDecryptionPerformance>
+        <!--CFB加密-->
+        <SM7_CFBEncryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--SM7算法CFB加密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </SM7_CFBEncryptionPerformance>
+        <!--CFB解密-->
+        <SM7_CFBDecryptionPerformance>
+          <usecaseID/>
+          <usecaseName/>
+          <testResult>2</testResult>
+          <!--SM7算法CFB解密性能检测的数据，单位：Kbps-->
+          <performanceResult>0</performanceResult>
+          <testData/>
+        </SM7_CFBDecryptionPerformance>
+      </SM7Performance>
+    </cipherPerformance>
+    <!--设备性能检测数据-->
+    <devicePerformance>
+      <!--随机数产生性能-->
+      <randomPerformance>
+        <usecaseID>030034</usecaseID>
+        <usecaseName>测试用例: 随机数性能</usecaseName>
+        <testResult>0</testResult>
+        <!--随机数产生性能，让服务器密码机生成并输出长度为 L（字节）的符合随机特性的随机序列N组，统计其完成时间T（秒），单位：Mbps-->
+        <performanceResult>18.68</performanceResult>
+        <testData/>
+      </randomPerformance>
+      <!--对称密钥产生性能-->
+      <symKeyGeneratePerformance>
+        <usecaseID>030035</usecaseID>
+        <usecaseName>测试用例: 对称密钥产生性能</usecaseName>
+        <testResult>0</testResult>
+        <!--让服务器密码机生成并输出 M 个密钥，测量其完成时间 T（秒），性能指标公式为 S =M/T；单位：组/秒-->
+        <performanceResult>14546.49</performanceResult>
+        <testData/>
+      </symKeyGeneratePerformance>
+      <!--非对称密钥对产生性能-->
+      <asymKeyGeneratePerformance>
+        <usecaseID>030036</usecaseID>
+        <usecaseName>测试用例: 非对称密钥产生性能</usecaseName>
+        <testResult>0</testResult>
+        <!--让服务器密码机生成并输出 M 对密钥对， 统计其完成时间 T（秒），性能指标公式为 S =M/T；单位：对/秒-->
+        <performanceResult>19676.52</performanceResult>
+        <testData/>
+      </asymKeyGeneratePerformance>
+      <!--并发工作性能-->
+      <concurrentPerformance>
+        <!--每秒新建连接数-->
+        <linkNum>
+          <usecaseID>030037</usecaseID>
+          <usecaseName>测试用例: 每秒新建连接数</usecaseName>
+          <testResult>0</testResult>
+          <!--在检测平台模拟多个客户端行为，并行与服务器密码机建立TCP连接，重复此过程一段时间，取每秒建立连接数目的平均值作为每秒新建连接数测试结果， 单位：条/秒-->
+          <performanceResult>74</performanceResult>
+          <testData/>
+        </linkNum>
+        <!--最大并发连接数-->
+        <concurrentLinkNum>
+          <usecaseID>030038</usecaseID>
+          <usecaseName>测试用例: 最大并发连接数</usecaseName>
+          <testResult>0</testResult>
+          <!--在检测平台模拟多个客户端行为，并行与服务器密码机建立TCP连接，然后不断增加客户端，并重复此过程，直到无法建立并保持连接为止。取已经接入的TCP连接数目为测试结果，单位:条-->
+          <performanceResult>4096</performanceResult>
+          <testData/>
+        </concurrentLinkNum>
+      </concurrentPerformance>
+    </devicePerformance>
+  </functionTest>
+  <!--互操作性检测数据-->
+  <interoperabilityTest>
+    <!--同类产品的互操作性检测数据,检测工具检测服务器密码机和基准设备的算法互通性-->
+    <likeProductInteroperability>
+      <!--SM1算法互操作性-->
+      <SM1Interoperability>
+        <usecaseID>040001</usecaseID>
+        <usecaseName>测试用例: SM1算法互操作性</usecaseName>
+        <testResult>0</testResult>
+        <testData/>
+      </SM1Interoperability>
+      <!--SM2-1算法互操作性-->
+      <SM21Interoperability>
+        <usecaseID>040002</usecaseID>
+        <usecaseName>测试用例: SM2签名验签互操作性</usecaseName>
+        <testResult>0</testResult>
+        <testData/>
+      </SM21Interoperability>
+      <!--SM2-2算法互操作性-->
+      <SM22Interoperability>
+        <usecaseID>040003</usecaseID>
+        <usecaseName>测试用例: SM2加解密互操作性</usecaseName>
+        <testResult>0</testResult>
+        <testData/>
+      </SM22Interoperability>
+      <!--SM2-3算法互操作性-->
+      <SM23Interoperability>
+        <usecaseID>040004</usecaseID>
+        <usecaseName>测试用例: SM2密钥协商互操作性</usecaseName>
+        <testResult>0</testResult>
+        <testData/>
+      </SM23Interoperability>
+      <!--SM4算法互操作性-->
+      <SM4Interoperability>
+        <usecaseID>040005</usecaseID>
+        <usecaseName>测试用例: SM4算法互操作性</usecaseName>
+        <testResult>0</testResult>
+        <testData/>
+      </SM4Interoperability>
+      <!--RSA2048算法互操作性-->
+      <RSA2048Interoperability>
+        <usecaseID/>
+        <usecaseName/>
+        <testResult>2</testResult>
+        <testData/>
+      </RSA2048Interoperability>
+    </likeProductInteroperability>
+  </interoperabilityTest>
+</funDetectionRecordInfo>

@@ -9,7 +9,6 @@
 @License :   (C)Copyright 2017-2018, Liu group-NLP-CASA
 @Desc    :   None
 """
-import tkinter.messagebox
 import customtkinter
 from tkinter import *
 import SM3
