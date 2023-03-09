@@ -28,7 +28,7 @@ class App(customtkinter.CTk):
         super().__init__()
 
         # configure window
-        self.title("MuTools")
+        self.title("MuTool")
         self.geometry(f"{1100}x{580}")
 
         # configure grid layout (2x1)
