@@ -29,7 +29,7 @@ def get_perf(path):
                                     perf.append(grson)
                     if son.tag == 'devicePerformance':
                         for grchild in son:
-                            if 'con' not in child.tag:
+                            if 'con' not in grchild.tag:
                                 perf.append(grchild)
                             else:
                                 for grson in grchild:
@@ -62,8 +62,6 @@ def get_perf(path):
                         perf_name.append(name)
                         perf_source.append(res)
                         perf_result.append(res)
-                        print(name)
-
                     else:
                         perf_name.append(name)
                         perf_source.append(res)
