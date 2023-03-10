@@ -16,8 +16,10 @@ class SideFrame(customtkinter.CTkFrame):
         self.label1.grid(row=0, column=0, padx=20, pady=20)
         self.button1 = customtkinter.CTkButton(self, text="性能提取", command=master.ShowPerf)
         self.button1.grid(row=1, column=0, padx=20, pady=5)
-        self.button2 = customtkinter.CTkButton(self, text="SM3算法")
+        self.button2 = customtkinter.CTkButton(self, text="随机数检测", command=master.randomtest)
         self.button2.grid(row=2, column=0, padx=20, pady=5)
+        self.button3 = customtkinter.CTkButton(self, text="SM3算法")
+        self.button3.grid(row=3, column=0, padx=20, pady=5)
         self.aboutbutton = customtkinter.CTkButton(self, text="关于")
         self.aboutbutton.grid(row=8, column=0, padx=20, pady=20, sticky="s")
 
@@ -58,6 +60,13 @@ class PerfFrame(customtkinter.CTkFrame):
             self.sheet.set_column_data(i, values=res[i], add_rows=True, redraw=False)
 
 
+class RandomFrame(customtkinter.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(self, master, **kwargs)
+
+        print(1)
+
+
 class App(customtkinter.CTk):
     def __init__(self):
         super().__init__()
@@ -76,6 +85,10 @@ class App(customtkinter.CTk):
     def ShowPerf(self):
         self.func = PerfFrame(master=self)
         self.func.grid(row=0, column=1, sticky="nsew")
+
+    def randomtest(self):
+        self.random = RandomFrame(mster=self)
+        self.random.grid(row=0, column=1, sticky="nsew")
 
 
 if __name__ == "__main__":
