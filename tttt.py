@@ -24,8 +24,10 @@ class App(customtkinter.CTk):
         # configure window
         self.title("CustomTkinter complex_example.py")
         self.geometry(f"{1100}x{580}")
-        self.tabview = customtkinter.CTkTabview(self, width=250)
-        self.tabview.grid(row=0, column=2, padx=(20, 0), pady=(20, 0), sticky="nsew")
+        self.grid_rowconfigure(0, weight=1)
+        self.grid_columnconfigure(0, weight=1)
+        self.tabview = customtkinter.CTkTabview(self)
+        self.tabview.grid(row=0, column=0, sticky="nsew")
         self.tabview.add("CTkTabview")
         self.tabview.add("Tab 2")
         self.tabview.add("Tab 3")
