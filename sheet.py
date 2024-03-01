@@ -29,7 +29,7 @@ class AboutWindow(customtkinter.CTkToplevel):
         self.title("关于")
         self.label = customtkinter.CTkLabel(self, text="ToplevelWindow")
         self.label.pack(padx=20, pady=20)
-        self.wm_attributes('-topmost',1)
+        self.wm_attributes('-topmost', 1)
 
 
 class FileFrame(customtkinter.CTkFrame):
@@ -48,6 +48,7 @@ class FileFrame(customtkinter.CTkFrame):
         path = filedialog.askopenfilename()
         self.filepath.delete(1.0, tkinter.END)
         self.filepath.insert(tkinter.END, path)
+
 
 class inputFrame(customtkinter.CTkFrame):
     def __init__(self, input_name, master, **kwargs):
@@ -131,13 +132,13 @@ class SM3Frame(customtkinter.CTkFrame):
         self.grid_columnconfigure((0, 1), weight=1)
         self.grid_rowconfigure((0, 1), weight=1)
         self.message_input = inputFrame("消息原文", master=self)
-        self.message_input.grid(row = 0, column=0, sticky = "nsew")
+        self.message_input.grid(row=0, column=0, sticky="nsew")
         self.key_input = inputFrame("HMAC密钥", master=self)
-        self.key_input.grid(row=0, column=1, sticky = "nsew")
+        self.key_input.grid(row=0, column=1, sticky="nsew")
         self.hash_output = inputFrame("HASH结果", master=self)
-        self.hash_output.grid(row=1, column=0, sticky = "nsew")
+        self.hash_output.grid(row=1, column=0, sticky="nsew")
         self.hash_output = inputFrame("HMAC结果", master=self)
-        self.hash_output.grid(row=1, column=1, sticky = "nsew")
+        self.hash_output.grid(row=1, column=1, sticky="nsew")
 
         print("sm3")
 
